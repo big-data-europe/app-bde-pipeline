@@ -1,0 +1,28 @@
+version: '2'
+services:
+  # app:
+  #   image: bde2020/pipeline-builder-frontend:0.1.0
+  #   links:
+  #     - identifier:backend
+  #   ports:
+  #     - 80:80
+  identifier:
+    image: semtech/mu-identifier:1.0.0
+    ports:
+      - 80:80
+  dispatcher:
+    image: semtech/mu-dispatcher:1.0.1
+    volumes:
+      - ./config:/config
+  database:
+    image: tenforce/virtuoso:1.0.0-virtuoso7.2.2
+    environment:
+      SPARQL_UPDATE: "true"
+    ports:
+      - "8890:8890"
+    volumes:
+      - ./data/db:/data
+  pipeline:
+    image: bde2020/pipeline-service:0.1.0
+  initdaemon:
+    image: bde2020/init-daemon-service
