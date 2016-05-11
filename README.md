@@ -1,10 +1,10 @@
-# Pipeline monitor application
+# BDE Pipeline application
 
-Application to monitor Big Data pipelines.
+Bootstrap a pipeline on the BDE platform
 
 ## Running the application
 ```
-git clone https://github.com/big-data-europe/app-pipeline-monitor.git
-cd app-pipeline-monitor
+git clone https://github.com/big-data-europe/app-bde-pipeline.git
+cd app-bde-pipeline
 docker-compose up -d
 ```
