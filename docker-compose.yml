@@ -1,15 +1,20 @@
 version: '2'
 services:
-  # app:
-  #   image: bde2020/pipeline-builder-frontend:0.1.0
-  #   links:
-  #     - identifier:backend
-  #   ports:
-  #     - 80:80
-  identifier:
-    image: semtech/mu-identifier:1.0.0
+  ###
+  # Add your pipeline here
+  ###
+
+  ###
+  # mu.semte.ch stack
+  ###
+  app:
+    image: bde2020/pipeline-monitor-frontend:0.1.0
+    links:
+      - identifier:backend
     ports:
       - 80:80
+  identifier:
+    image: semtech/mu-identifier:1.0.0
   dispatcher:
     image: semtech/mu-dispatcher:1.0.1
     volumes:
