@@ -7,12 +7,18 @@ services:
   ###
   # mu.semte.ch stack
   ###
-  app:
+  integratorui:
+    image: bde2020/integrator-ui:latest
+    volumes:
+      - /path/to/integrator/config:/app/config
+    environment:
+      VIRTUAL_HOST: example.big-data-europe.eu
+  monitor:
     image: bde2020/pipeline-monitor-frontend:0.1.0
     links:
       - identifier:backend
-    ports:
-      - 80:80
+    environment:
+      VIRTUAL_HOST: monitor.example.big-data-europe.eu
   identifier:
     image: semtech/mu-identifier:1.0.0
   dispatcher:
