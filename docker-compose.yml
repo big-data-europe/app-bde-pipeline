@@ -10,7 +10,7 @@ services:
   integratorui:
     image: bde2020/integrator-ui:latest
     volumes:
-      - /path/to/integrator/config:/app/config
+      - ./config/integrator:/app/config
     environment:
       VIRTUAL_HOST: example.big-data-europe.eu
   monitor:
