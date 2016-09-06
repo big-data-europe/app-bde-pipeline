@@ -14,7 +14,7 @@ services:
     environment:
       VIRTUAL_HOST: example.big-data-europe.eu
   monitor:
-    image: bde2020/pipeline-monitor-frontend:0.2.0
+    image: bde2020/pipeline-monitor-frontend:0.2.2
     links:
       - identifier:backend
     environment:
